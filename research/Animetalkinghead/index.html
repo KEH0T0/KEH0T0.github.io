@@ -42,7 +42,7 @@
             <div class="col-md-10">
                 <center>
                     <h2 style="margin-top: 20px; margin-bottom: 20px; line-height: 1.2em;">
-                        Animetalkinghead: Cross-domain Face Reenactment</h2>
+                        Expression Domain Translation Network for Cross-domain Head Reenactment</h2>
                     <h4></h4>
                     <!-- author -->
                     <div class="row author" style="margin-top:18px;">
@@ -50,19 +50,19 @@
                             <a href="https://KEH0T0.github.io/" target="_blank">Taewoong Kang*</a>
                             <div class="font-italic">2018171060@korea.ac.kr</div>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-3">
                             <a href="https://sites.google.com/view/sanghyeonlee/%ED%99%88" target="_blank">Jeongsik Oh*</a>
-                            <div class="font-italic">@kaist.ac.kr</div>
+                            <div class="font-italic">kbg1070@kaist.ac.kr</div>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-3">
                             <a href="https://pmh9960.github.io/" target="_blank">Jaeseong Lee</a>
-                            <div class="font-italic">@kaist.ac.kr</div>
+                            <div class="font-italic">wintermad1245@kaist.ac.kr</div>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-3">
                             <a href="https://pmh9960.github.io/" target="_blank">Sunghyun Park</a>
-                            <div class="font-italic">@kaist.ac.kr</div>
+                            <div class="font-italic">psh01087@kaist.ac.kr</div>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-3">
                             <a href="https://sites.google.com/site/jaegulchoo/" target="_blank">Jaegul Choo</a>
                             <div class="font-italic">jchoo@kaist.ac.kr</div>
                         </div>
@@ -81,10 +81,11 @@
                 </center>
                 <center>
                     <figure class="figure">
-                        <img src="./figs/iColoriT_demo.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;">
+                        <!-- <video autoplay controls loop muted src="./figures/teasure_video_1.mp4" width="720px" height="400px"></video> -->
+                        <img src="./figures/result.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;">
                         <figcaption class="figure-caption text-justify">
                             <center>
-                                iColoriT empowers users to enliven grayscale images with only a few clicks.
+                                (Left) Driving video &emsp; (Center) Kim et al. &emsp; (Right) Ours
                             </center>
                         </figcaption>
                     </figure>
@@ -139,19 +140,17 @@
                 <h3>Abstract</h3>
                 <div>
                     <p class="lead text-justify">
-                        Point-interactive image colorization aims to colorize grayscale images when a user provides the colors for specific
-                        locations. It is essential for point-interactive colorization methods to appropriately propagate user-provided
-                        colors (<i>i.e.,</i> user hints) in the entire image to obtain a reasonably colorized image with minimal user
-                        effort. However, existing approaches often produce partially colorized results due to the inefficient design of
-                        stacking convolutional layers to propagate hints to distant relevant regions. To address this problem, we present
-                        iColoriT, a novel point-interactive colorization Vision Transformer capable of propagating user hints to relevant
-                        regions, leveraging the global receptive field of Transformers. The self-attention mechanism of Transformers enables
-                        iColoriT to selectively colorize relevant regions with only a few local hints. Our approach colorizes images in
-                        real-time by utilizing pixel shuffling, an efficient upsampling technique that replaces the decoder architecture.
-                        Also, in order to mitigate the artifacts caused by pixel shuffling with large upsampling ratios, we present the
-                        local stabilizing layer. Extensive quantitative and qualitative results demonstrate that our approach highly
-                        outperforms existing methods for point-interactive colorization, producing accurately colorized images with a user's
-                        minimal effort.
+                        Despite the remarkable advancements in head reenactment, the existing methods face challenges in cross-domain head reenactment, 
+                        which aims to transfer human motions to domains outside the human, including cartoon characters.
+                         It is still difficult to extract motion from out-of-domain images due to the distinct appearances, such as large eyes. 
+                         Recently, previous work introduced a large-scale anime dataset called AnimeCeleb and 
+                         a cross-domain head reenactment model including an optimization-based mapping function to translate the human domain’s expressions to the anime domain. 
+                         However, we found that the mapping function, which relies on a subset of expressions, imposes limitations on the mapping of various expressions. 
+                         To solve this challenge, we introduce a novel expression domain translation network that transforms human expressions into anime expressions. 
+                         Specifically, to maintain the geometric consistency of expressions between the input and output of the expression domain translation network, 
+                         we employ a 3D geometric-aware loss function that reduces the distances between the vertices in the 3D mesh of the input and output. 
+                         By doing so, it forces high-fidelity and one-to-one mapping with respect to two cross-expression domains. 
+                         Our method outperforms existing methods in both qualitative and quantitative analysis, marking a significant advancement in the field of cross-domain head reenactment.
                     </p>
                 </div>
                 <hr>
@@ -159,7 +158,7 @@
                 <div>
                     <div class="row">
                         <div class="col-sm-3">
-                            <img src="./figs/paper_img.png" class="img-fluid border" alt="" style="margin:20px;">
+                            <img src="./figures/paper_front.jpeg" class="img-fluid border" alt="" style="margin:20px;">
                         </div>
                         <div class="col" style="margin-top: auto; margin-bottom: auto;">
                             <div class="align-middle" style="width: 100%;">
@@ -168,12 +167,11 @@
                                 <!-- <a href="https://scholar.googleusercontent.com/scholar.bib?q=info:3syu6fizQcYJ:scholar.google.com/&output=citation&scisdr=CgVb7RezEMvZ4zVDrX8:AAGBfm0AAAAAXudGtX8XEpHQ7ppftvlFMwUPtLgbGVXv&scisig=AAGBfm0AAAAAXudGtTSBHbdETWqFmYD91v8cMj_a6eWU&scisf=4&ct=citation&cd=-1&hl=ko" target="_blank">[Bibtex]</a> -->
                                 <!-- <a href="https://drive.google.com/file/d/1xu-V6khowTvzXAkD2tY1-gBB7g-RFfGy/view?usp=sharing" target="_blank">[Video]</a> -->
                                 <!-- <a href="https://drive.google.com/file/d/1FVFqhogxTzPwV-ay0UIoRHqmlkNQsQS3/view?usp=sharing" target="_blank">[Slide]</a> -->
-                                <a href="https://github.com/pmh9960/iColoriT" target="_blank">[Github]</a>
+                                <a href="https://github.com/keh0t0/Animetalkinghead" target="_blank">[Github]</a>
                                 <p class="lead">
-                                    WACV, 2023. <br>
-                                    Jooyeol Yun, Sanghyeon Lee, Minho Park, and Jaegul Choo.<br>
-                                    "iColoriT: Towards Propagating Local Hint to the Right Region
-                                    in Interactive Colorization by Leveraging Vision Transformer"
+                                    <!-- WACV, 2023. <br> -->
+                                    Taewoong Kang*, Jeongsik Oh*, Jaeseong Lee, Sunghyun Park, and Jaegul Choo.<br>
+                                    "Expression Domain Translation Network for Cross-domain Head Reenactment"
                                 </p>
                             </div>
                         </div>
@@ -184,10 +182,16 @@
                 <div>
                     <center>
                         <figure class="figure">
-                            <img src="./figs/main_method_main.png" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
+                            <img src="./figures/model_figure_3.png" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
                             <figcaption class="figure-caption text-justify">
                                 <center>
                                     An overview of our proposed method.
+                                </center>
+                            </figcaption>
+                            <img src="./figures/model_figure_v9.jpg" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
+                            <figcaption class="figure-caption text-justify">
+                                <center>
+                                    A diagram of our proposed method.
                                 </center>
                             </figcaption>
                         </figure>
