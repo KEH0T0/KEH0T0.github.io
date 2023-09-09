@@ -39,10 +39,15 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style_slider1.css">
+  <link rel="stylesheet" href="style_slider2.css">
+  <link rel="stylesheet" href="style_slider3.css">
+  <link rel="stylesheet" href="style_slider4.css">
 </head>
 <body>
 
-<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
@@ -52,7 +57,7 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
+      <a class="navbar-item" href="https://keh0t0.github.io/">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
@@ -63,10 +68,10 @@
           More Research
         </a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
+          <a class="navbar-item" href="https://github.com/kangyeolk/AnimeCeleb">
+            AnimeCeleb
           </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
+          <!-- <a class="navbar-item" href="https://nerfies.github.io">
             Nerfies
           </a>
           <a class="navbar-item" href="https://latentfusion.github.io">
@@ -74,14 +79,13 @@
           </a>
           <a class="navbar-item" href="https://photoshape.github.io">
             PhotoShape
-          </a>
+          </a> -->
         </div>
       </div>
     </div>
 
   </div>
-</nav> -->
-
+</nav>
 
 <section class="hero">
   <div class="hero-body">
@@ -93,15 +97,15 @@
             <span class="author-block">
               <a href="https://keh0t0.github.io">Taewoong Kang</a><sup>1,*</sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Jeongsik Oh</a><sup>2,*</sup>,</span>
+              <a href="https://github.com/JEONGSIKOH0">Jeongsik Oh</a><sup>2,*</sup>,</span>
             <span class="author-block">
-              <a href="https://jonbarron.info">Jaeseong Lee</a><sup>2</sup>,
+              <a href="https://keh0t0.github.io">Jaeseong Lee</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sunghyun Park</a><sup>2</sup>,
+              <a href="https://keh0t0.github.io">Sunghyun Park</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://www.danbgoldman.com">Jaegul Choo</a><sup>2</sup>
+              <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a><sup>2</sup>
             </span>
           </div>
 
@@ -132,7 +136,7 @@
                 </a>
               </span>
               <!-- Video Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -140,7 +144,7 @@
                   </span>
                   <span>Video</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Code Link. -->
               <span class="link-block">
                 <a href="https://github.com/google/nerfies"
@@ -152,14 +156,14 @@
                   </a>
               </span>
               <!-- Dataset Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://github.com/google/nerfies/releases/tag/0.1"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
                   <span>Data</span>
-                  </a>
+                  </a> -->
             </div>
 
           </div>
@@ -182,7 +186,8 @@
         portraits.
       </h2> -->
       <figure class="figure">
-        <img src="./static/figures/result.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;">
+        <img src="./static/figures/quality_v9.jpg" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;">
+        <!-- <img src="./static/figures/result.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;"> -->
         <figcaption class="figure-caption text-justify">
             <center>
                 (Left) Driving video &emsp; (Center) Kim et al. &emsp; (Right) Ours
@@ -193,6 +198,39 @@
   </div>
 </section>
 
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Self_reconstruction_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Cross_reenactment_4.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Fast_personalization_1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Fast_personalization_3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- <section class="hero is-light is-small">
   <div class="hero-body">
@@ -250,14 +288,39 @@
     </div>
   </div>
 </section> -->
-
-
+<!-- <div class="container" style="margin-top:20px;">
+  <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div style="margin-top:15px"></div>
+          <hr>
+          <h2>Abstract</h2>
+            <div>
+                <p class="lead text-justify">
+                    Despite the remarkable advancements in head reenactment, the existing methods face challenges in cross-domain head reenactment, 
+                    which aims to transfer human motions to domains outside the human, including cartoon characters.
+                    It is still difficult to extract motion from out-of-domain images due to the distinct appearances, such as large eyes. 
+                    Recently, previous work introduced a large-scale anime dataset called AnimeCeleb and 
+                    a cross-domain head reenactment model including an optimization-based mapping function to translate the human domain’s expressions to the anime domain. 
+                    However, we found that the mapping function, which relies on a subset of expressions, imposes limitations on the mapping of various expressions. 
+                    To solve this challenge, we introduce a novel expression domain translation network that transforms human expressions into anime expressions. 
+                    Specifically, to maintain the geometric consistency of expressions between the input and output of the expression domain translation network, 
+                    we employ a 3D geometric-aware loss function that reduces the distances between the vertices in the 3D mesh of the input and output. 
+                    By doing so, it forces high-fidelity and one-to-one mapping with respect to two cross-expression domains. 
+                    Our method outperforms existing methods in both qualitative and quantitative analysis, marking a significant advancement in the field of cross-domain head reenactment.
+                </p>
+            </div>
+          <hr>
+      </div>
+      </div>
+  </div> -->
+  
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+    <h2 class="title is-3">Abstract</h2>
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths"> -->
         <div class="content has-text-justified">
           Despite the remarkable advancements in head reenactment, the existing methods face challenges in cross-domain head reenactment, 
           which aims to transfer human motions to domains outside the human, including cartoon characters.
@@ -271,8 +334,8 @@
           By doing so, it forces high-fidelity and one-to-one mapping with respect to two cross-expression domains. 
           Our method outperforms existing methods in both qualitative and quantitative analysis, marking a significant advancement in the field of cross-domain head reenactment.
         </div>
-      </div>
-    </div>
+      <!-- </div>
+    </div> -->
     <!--/ Abstract. -->
 
     <!-- Paper video. -->
@@ -310,41 +373,40 @@
     </div> -->
   </div>
 </section>
+
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Method overview</h2>
-        <div>
-            <center>
-                <figure class="figure">
-                    <img src="./static/figures/model_figure_full_v1.jpg" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
-                    <figcaption class="figure-caption text-justify">
-                        <center>
-                            An overview of our proposed method.
-                        </center>
-                    </figcaption>
-                    <img src="./static/figures/model_figure_v10.jpg" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
-                    <figcaption class="figure-caption text-justify">
-                        <center>
-                            A diagram of our proposed method.
-                        </center>
-                    </figcaption>
-                </figure>
-            </center>
-        </div>
+    <h2 class="title is-3">Method overview</h2>
+    <div>
+        <center>
+            <figure class="figure">
+                <img src="./static/figures/model_figure_full_v1.jpg" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
+                <figcaption class="figure-caption text-justify">
+                    <center>
+                        An overview of our proposed method. (A) for expression domain translation network training method.
+                        (B) for optimizing pose adapter. (C) for Anime Generator that can edit the source image with driving expression.
+                        (D) for comparing the distribution concurrency.
+                    </center>
+                </figcaption>
+                <img src="./static/figures/model_figure_v10.jpg" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
+                <figcaption class="figure-caption text-justify">
+                    <center>
+                        A diagram of our proposed method.
+                    </center>
+                </figcaption>
+            </figure>
+        </center>
       </div>
-    </div>
   </div>
-</section>\
+</section>
+
 <section class="section">
   <div class="container is-max-desktop">
 
     <div class="columns is-centered">
 
       <!-- Visual Effects. -->
-      <div class="column">
+      <!-- <div class="column">
         <div class="content">
           <h2 class="title is-3">Visual Effects</h2>
           <p>
@@ -356,11 +418,11 @@
                     type="video/mp4">
           </video>
         </div>
-      </div>
+      </div> -->
       <!--/ Visual Effects. -->
 
       <!-- Matting. -->
-      <div class="column">
+      <!-- <div class="column">
         <h2 class="title is-3">Matting</h2>
         <div class="columns is-centered">
           <div class="column content">
@@ -375,10 +437,63 @@
           </div>
 
         </div>
-      </div>
+      </div> -->
     </div>
     <!--/ Matting. -->
 
+    <!-- Video -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Qaulitative Comparisons</h2>
+
+        <h3 class="title is-4">Videos</h3>
+        <div id="slider-wrap-1">
+          <ul id="slider">
+              <li>
+                  <img src="./figs/icolorit_vs_zhang_1.png">
+              </li>
+              <li>
+                  <img src="./figs/icolorit_vs_zhang_2.png">
+              </li>
+              <li>
+                  <img src="./figs/icolorit_vs_zhang_3.png">
+              </li>
+          </ul>
+
+          <div class="slider-btns-1" id="next-1"><span>▶</span></div>
+          <div class="slider-btns-1" id="previous-1"><span>◀</span></div>
+
+          <div id="slider-pagination-wrap-1">
+              <ul></ul>
+          </div>
+        </div>
+        <br/>
+        <!--/ Interpolating. -->
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">Re-rendering the input video</h3>
+        <div class="content has-text-justified">
+          <p>
+            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
+            viewpoint such as a stabilized camera by playing back the training deformations.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="75%">
+            <source src="./static/videos/replay.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    
     <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
@@ -445,7 +560,7 @@
 
 
     <!-- Concurrent Work. -->
-    <div class="columns is-centered">
+    <!-- <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
 
@@ -467,23 +582,42 @@
             There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
           </p>
         </div>
-      </div>
-    </div>
+      </div> 
+    </div>-->
     <!--/ Concurrent Work. -->
 
   </div>
+    <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+              tex2jax: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+          });
+      </script>
+  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  <script src="./slideshow_1.js"></script>
+  <script src="./slideshow_2.js"></script>
+  <script src="./slideshow_3.js"></script>
+  <script src="./slideshow_4.js"></script>
 </section>
 
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
+    <!-- <pre><code>@article{park2021nerfies,
   author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
   title     = {Nerfies: Deformable Neural Radiance Fields},
   journal   = {ICCV},
   year      = {2021},
-}</code></pre>
+}</code></pre> -->
   </div>
 </section>
 
@@ -492,10 +626,10 @@
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
+         href="./static/ICASSP_2024_ETC_v4.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+      <a class="icon-link" href="https://github.com/keh0t0" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>
@@ -516,6 +650,8 @@
     </div>
   </div>
 </footer>
+
+
 
 </body>
 </html>
