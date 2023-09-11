@@ -99,10 +99,10 @@
             <span class="author-block">
               <a href="https://github.com/JEONGSIKOH0">Jeongsik Oh</a><sup>2,*</sup>,</span>
             <span class="author-block">
-              <a href="https://keh0t0.github.io">Jaeseong Lee</a><sup>2</sup>,
+              <a href="https://leejesse.github.io/">Jaeseong Lee</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://keh0t0.github.io">Sunghyun Park</a><sup>2</sup>,
+              <a href="https://psh01087.github.io/">Sunghyun Park</a><sup>2</sup>,
             </span>
             <span class="author-block">
               <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a><sup>2</sup>
@@ -186,11 +186,13 @@
         portraits.
       </h2> -->
       <figure class="figure">
-        <img src="./static/figures/quality_v9.jpg" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;">
+        <img src="./static/figures/result.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;">
+        <img src="./static/figures/result2.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;">
+        <img src="./static/figures/result3.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;">
         <!-- <img src="./static/figures/result.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;"> -->
         <figcaption class="figure-caption text-justify">
             <center>
-                (Left) Driving video &emsp; (Center) Kim et al. &emsp; (Right) Ours
+                (A) Source image &emsp; (B) Driving video &emsp; (C) Kim et al. &emsp; (D) Ours
             </center>
         </figcaption>
       </figure>
@@ -380,20 +382,19 @@
     <div>
         <center>
             <figure class="figure">
-                <img src="./static/figures/model_figure_full_v1.jpg" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
+                <img src="./static/figures/model_figure_new_v1.jpg" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
                 <figcaption class="figure-caption text-justify">
                     <center>
                         An overview of our proposed method. (A) for expression domain translation network training method.
-                        (B) for optimizing pose adapter. (C) for Anime Generator that can edit the source image with driving expression.
-                        (D) for comparing the distribution concurrency.
+                        (B) for Anime Generator that can edit the source image with driving expression. (C) for optimizing pose adapter. 
                     </center>
                 </figcaption>
-                <img src="./static/figures/model_figure_v10.jpg" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
+                <!-- <img src="./static/figures/model_figure_v10.jpg" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
                 <figcaption class="figure-caption text-justify">
                     <center>
                         A diagram of our proposed method.
                     </center>
-                </figcaption>
+                </figcaption> -->
             </figure>
         </center>
       </div>
@@ -446,18 +447,18 @@
         
         <h2 class="title is-3">Qualitative Comparisons</h2>
         <hr>
-        <h3 class="title is-4">Videos</h3>
+        <h3 class="title is-4">Images</h3>
         <h3>2D AnimeCeleb</h3>
         <div id="slider-wrap-1">
           <ul id="slider">
               <li>
-                  <img src="./figs/icolorit_vs_zhang_1.png">
+                  <img src="./static/figures/image_sample1.jpg">
               </li>
               <li>
-                  <img src="./figs/icolorit_vs_zhang_2.png">
+                  <img src="./static/figures/image_sample2.jpg">
               </li>
               <li>
-                  <img src="./figs/icolorit_vs_zhang_3.png">
+                  <img src="./static/figures/image_sample3.jpg">
               </li>
           </ul>
 
@@ -468,26 +469,29 @@
               <ul></ul>
           </div>
         </div>
-        <!-- <figcaption class="figure-caption text-justify">
+        <figcaption class="figure-caption text-justify">
           <center>
-              (Left) User hints &emsp; (Center) Zhang et al. &emsp; (Right) iColoriT
+            (A) Source image &emsp; (B) Driving image &emsp; (C) Kim et al. &emsp; (D) Ours
           </center>
-        </figcaption> -->
+        </figcaption>
 
         <h3>3D AnimeCeleb</h3>
         <div id="slider-wrap-2">
             <ul id="slider">
                 <li>
-                    <img src="./figs/diverse_color1.png">
+                    <img src="./static/figures/2d_sample_1.jpg">
                 </li>
                 <li>
-                    <img src="./figs/diverse_color2.png">
+                    <img src="./static/figures/2d_sample_2.jpg">
                 </li>
                 <li>
-                    <img src="./figs/diverse_color3.png">
+                    <img src="./static/figures/2d_sample_3.jpg">
                 </li>
                 <li>
-                    <img src="./figs/diverse_color4.png">
+                    <img src="./static/figures/2d_sample_4.jpg">
+                </li>
+                <li>
+                    <img src="./static/figures/2d_sample_5.jpg">
                 </li>
             </ul>
 
@@ -498,6 +502,11 @@
                 <ul></ul>
             </div>
         </div>
+        <figcaption class="figure-caption text-justify">
+          <center>
+            (A) Source image &emsp; (B) Driving image &emsp; (C) Kim et al. &emsp; (D) Ours
+          </center>
+        </figcaption>
 
         <h3>In the wild examples</h3>
         <center>
@@ -520,6 +529,7 @@
             </div>
         </center>
       </div>
+
     </div>
 
     <!-- Image -->
