@@ -403,44 +403,6 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <!-- <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div> -->
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <!-- <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div> -->
-    </div>
-    <!--/ Matting. -->
-
     <!-- Video -->
     <div class="columns is-centered">
       <div class="column is-full-width">
@@ -510,13 +472,20 @@
 
         <h3>In the wild examples</h3>
         <center>
-            <div id="slider-wrap-3" style="width: 70%;">
+            <div id="slider-wrap-3" > 
+              <!-- style="width: 70%;" -->
                 <ul id="slider">
                     <li>
-                        <img src="./figs/rollout_p1.png">
+                        <img src="./static/figures/Inthewild_9.png">
                     </li>
                     <li>
-                        <img src="./figs/rollout_p2.png">
+                        <img src="./static/figures/Inthewild_10.png">
+                    </li>
+                    <li>
+                        <img src="./static/figures/Inthewild_5.png">
+                    </li>
+                    <li>
+                        <img src="./static/figures/Inthewild_6.png">
                     </li>
                 </ul>
 
@@ -527,6 +496,11 @@
                     <ul></ul>
                 </div>
             </div>
+            <figcaption class="figure-caption text-justify">
+              <center>
+                (A) Source image &emsp; (B) Driving image &emsp; (C) Kim et al. &emsp; (D) Ours
+              </center>
+            </figcaption>
         </center>
       </div>
 

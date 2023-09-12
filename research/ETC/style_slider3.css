@@ -1,6 +1,6 @@
 #slider-wrap-3 {
   width: 100%;
-  aspect-ratio: 3 / 2.25; /* TODO change */
+  aspect-ratio: 2 / 1.1; /* TODO change */
   position: relative;
   overflow: hidden;
 }
@@ -72,7 +72,7 @@
 /*bar*/
 #slider-pagination-wrap-3 {
   min-width: 20px;
-  margin-top: 67%;
+  margin-top: 50.5%;
   margin-left: auto;
   margin-right: auto;
   height: 15px;
