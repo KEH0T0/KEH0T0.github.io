@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <title>Animetalkinghead:Cross-domain Head Reenactment</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/figures/davian_fevicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style_slider1.css">
+  <link rel="stylesheet" href="style_slider2.css">
+  <link rel="stylesheet" href="style_slider3.css">
+  <link rel="stylesheet" href="style_slider4.css">
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keh0t0.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com/kangyeolk/AnimeCeleb">
+            AnimeCeleb
+          </a>
+          <!-- <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a> -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Expression Domain Translation Network for Cross-domain Head Reenactment</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://keh0t0.github.io">Taewoong Kang</a><sup>1,*</sup>,</span>
+            <span class="author-block">
+              <a href="https://github.com/JEONGSIKOH0">Jeongsik Oh</a><sup>2,*</sup>,</span>
+            <span class="author-block">
+              <a href="https://leejesse.github.io/">Jaeseong Lee</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://psh01087.github.io/">Sunghyun Park</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Korea University,</span>
+            <span class="author-block"><sup>2</sup>KAIST</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2310.10073"
+                   class="internal-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/kangyeolk/AnimeCeleb/tree/main/EDTN"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="https://github.com/kangyeolk/AnimeCeleb/tree/main/EDTN/demo"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-paint-brush"></i>
+                  </span>
+                  <span>DEMO</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2> -->
+      <figure class="figure">
+        <img src="./static/gif/source_edit_2_1.png" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;">
+        <img src="./static/gif/project_teaser_1.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:-29px 0px;">
+        <img src="./static/gif/project_teaser_2.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;">
+        <img src="./static/gif/project_teaser_3.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:-29px 0px;">
+        <!-- <img src="./static/figures/result.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;"> -->
+        <figcaption class="figure-caption text-justify" style="margin:30px 0px;">
+            <center>
+                Cross-domain head reenactment examples of our method
+            </center>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/figures/video_1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/figures/video_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/figures/video_3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-anime">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/figures/video_5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-ania">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/figures/video_4.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- <div class="container" style="margin-top:20px;">
+  <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div style="margin-top:15px"></div>
+          <hr>
+          <h2>Abstract</h2>
+            <div>
+                <p class="lead text-justify">
+                    Despite the remarkable advancements in head reenactment, the existing methods face challenges in cross-domain head reenactment, 
+                    which aims to transfer human motions to domains outside the human, including cartoon characters.
+                    It is still difficult to extract motion from out-of-domain images due to the distinct appearances, such as large eyes. 
+                    Recently, previous work introduced a large-scale anime dataset called AnimeCeleb and 
+                    a cross-domain head reenactment model including an optimization-based mapping function to translate the human domain’s expressions to the anime domain. 
+                    However, we found that the mapping function, which relies on a subset of expressions, imposes limitations on the mapping of various expressions. 
+                    To solve this challenge, we introduce a novel expression domain translation network that transforms human expressions into anime expressions. 
+                    Specifically, to maintain the geometric consistency of expressions between the input and output of the expression domain translation network, 
+                    we employ a 3D geometric-aware loss function that reduces the distances between the vertices in the 3D mesh of the input and output. 
+                    By doing so, it forces high-fidelity and one-to-one mapping with respect to two cross-expression domains. 
+                    Our method outperforms existing methods in both qualitative and quantitative analysis, marking a significant advancement in the field of cross-domain head reenactment.
+                </p>
+            </div>
+          <hr>
+      </div>
+      </div>
+  </div> -->
+  
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <h2 class="title is-3">Abstract</h2>
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths"> -->
+        <div class="content has-text-justified">
+          Despite the remarkable advancements in head reenactment, the existing methods face challenges in cross-domain head reenactment, 
+          which aims to transfer human motions to domains outside the human, including cartoon characters.
+          It is still difficult to extract motion from out-of-domain images due to the distinct appearances, such as large eyes. 
+          Recently, previous work introduced a large-scale anime dataset called AnimeCeleb and 
+          a cross-domain head reenactment model including an optimization-based mapping function to translate the human domain’s expressions to the anime domain. 
+          However, we found that the mapping function, which relies on a subset of expressions, imposes limitations on the mapping of various expressions. 
+          To solve this challenge, we introduce a novel expression domain translation network that transforms human expressions into anime expressions. 
+          Specifically, to maintain the geometric consistency of expressions between the input and output of the expression domain translation network, 
+          we employ a 3D geometric-aware loss function that reduces the distances between the vertices in the 3D mesh of the input and output. 
+          By doing so, it forces high-fidelity and one-to-one mapping with respect to two cross-expression domains. 
+          Our method outperforms existing methods in both qualitative and quantitative analysis, marking a significant advancement in the field of cross-domain head reenactment.
+        </div>
+      <!-- </div>
+    </div> -->
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Paper</h2>
+        <div class="content has-text-justified">
+          <div class="row">
+            <div class="col-sm-3">
+              <img src="./static/figures/paper_front.jpeg" class="img-fluid border" alt="" style="margin:20px;">
+            </div>
+            <div class="col" style="margin-top: auto; margin-bottom: auto;">
+                <div class="align-middle" style="width: 100%;">
+                    <a href="./ICASSP_2024_ETC_v4.pdf" target="_blank">[Paper PDF]</a>
+                    <p class="lead">
+                        Taewoong Kang*, Jeongsik Oh*, Jaeseong Lee, Sunghyun Park, and Jaegul Choo.<br>
+                        "Expression Domain Translation Network for Cross-domain Head Reenactment"
+                    </p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Method overview</h2>
+    <div>
+        <center>
+            <figure class="figure">
+                <img src="./static/figures/model_figure_new_4.jpg" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
+                <figcaption class="figure-caption text-justify">
+                    <center>
+                        An overview of our proposed method. (A) for expression domain translation network training method.
+                        (B) for Anime Generator that can edit the source image with driving expression. (C) for optimizing pose adapter. 
+                    </center>
+                </figcaption>
+                <!-- <img src="./static/figures/model_figure_v10.jpg" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
+                <figcaption class="figure-caption text-justify">
+                    <center>
+                        A diagram of our proposed method.
+                    </center>
+                </figcaption> -->
+            </figure>
+        </center>
+      </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Video -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        
+        <h2 class="title is-3">Qualitative Comparisons</h2>
+        <hr>
+        <h3 class="title is-4">Videos</h3>
+        <h3 class="title is-5">Compare 3D AnimeCeleb with Animo</h3>
+        <figure class="figure">
+          <img src="./static/figures/result1.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:0px 0px;">
+          <img src="./static/figures/result2.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:-9px 0px;">
+          <img src="./static/figures/result3.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:0px 0px;">
+          <!-- <img src="./static/figures/result.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;"> -->
+          <figcaption class="figure-caption text-justify" style="margin:30px 0px;">
+              <center>
+                (A) Source image &emsp; (B) Driving image &emsp; (C) Animo &emsp; (D) Ours
+              </center>
+          </figcaption>
+        </figure>
+        <h3 class="title is-5">Compare 2D AnimeCeleb with Baselines</h3>
+        <figure class="figure">
+          <img src="./static/gif/baseline_1.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:0px 0px;">
+          <img src="./static/gif/baseline_2.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:-9px 0px;">
+          <img src="./static/gif/baseline_4.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:0px 0px;">
+          <!-- <img src="./static/figures/result.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;"> -->
+          <figcaption class="figure-caption text-justify" style="margin:30px 0px;">
+              <center>
+                (A) Source image &emsp; (B) Driving image &emsp; (C) FOMM &emsp; (D) Pirenderer+T &emsp; (E) Animo &emsp; (F) Ours
+              </center>
+          </figcaption>
+        </figure>
+        <h3 class="title is-5">Compare with rendered image</h3>
+        <figure class="figure">
+          <img src="./static/gif/render_1.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:0px 0px;">
+          <img src="./static/gif/render_2.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:-9px 0px;">
+          <img src="./static/gif/render_3.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:0px 0px;">
+          <!-- <img src="./static/figures/result.gif" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;"> -->
+          <figcaption class="figure-caption text-justify" style="margin:30px 0px;">
+              <center>
+                (A) Driving image &emsp; (B) Rendered &emsp; (C)~(E) Ours 
+              </center>
+
+          </figcaption>
+        </figure>
+
+
+        <hr>
+        <h3 class="title is-4">Images</h3>
+        <h3 class="title is-5">2D AnimeCeleb</h3>
+        <div id="slider-wrap-1">
+          <ul id="slider">
+              <li>
+                  <img src="./static/figures/image_sample1.jpg">
+              </li>
+              <li>
+                  <img src="./static/figures/image_sample2.jpg">
+              </li>
+              <li>
+                  <img src="./static/figures/image_sample3.jpg">
+              </li>
+          </ul>
+
+          <div class="slider-btns-1" id="next-1"><span>▶</span></div>
+          <div class="slider-btns-1" id="previous-1"><span>◀</span></div>
+
+          <div id="slider-pagination-wrap-1">
+              <ul></ul>
+          </div>
+        </div>
+        <figcaption class="figure-caption text-justify">
+          <center>
+            (A) Source image &emsp; (B) Driving image &emsp; (C) Animo &emsp; (D) Ours
+          </center>
+        </figcaption>
+
+        <h3 class="title is-5">3D AnimeCeleb</h3>
+        <div id="slider-wrap-2">
+            <ul id="slider">
+                <li>
+                    <img src="./static/figures/2d_sample_1.jpg">
+                </li>
+                <li>
+                    <img src="./static/figures/2d_sample_2.jpg">
+                </li>
+                <li>
+                    <img src="./static/figures/2d_sample_3.jpg">
+                </li>
+                <li>
+                    <img src="./static/figures/2d_sample_4.jpg">
+                </li>
+                <li>
+                    <img src="./static/figures/2d_sample_5.jpg">
+                </li>
+            </ul>
+
+            <div class="slider-btns-2" id="next-2"><span>▶</span></div>
+            <div class="slider-btns-2" id="previous-2"><span>◀</span></div>
+
+            <div id="slider-pagination-wrap-2">
+                <ul></ul>
+            </div>
+        </div>
+        <figcaption class="figure-caption text-justify">
+          <center>
+            (A) Source image &emsp; (B) Driving image &emsp; (C) Animo &emsp; (D) Ours
+          </center>
+        </figcaption>
+
+        <h3 class="title is-5">In the wild examples</h3>
+        <center>
+            <div id="slider-wrap-3" > 
+              <!-- style="width: 70%;" -->
+                <ul id="slider">
+                    <li>
+                        <img src="./static/figures/inthewild_9.png">
+                    </li>
+                    <li>
+                        <img src="./static/figures/inthewild_10.png">
+                    </li>
+                    <li>
+                        <img src="./static/figures/inthewild_5.png">
+                    </li>
+                    <li>
+                        <img src="./static/figures/inthewild_6.png">
+                    </li>
+                </ul>
+
+                <div class="slider-btns-3" id="next-3"><span>▶</span></div>
+                <div class="slider-btns-3" id="previous-3"><span>◀</span></div>
+
+                <div id="slider-pagination-wrap-3">
+                    <ul></ul>
+                </div>
+            </div>
+            <figcaption class="figure-caption text-justify">
+              <center>
+                (A) Source image &emsp; (B) Driving image &emsp; (C) Animo &emsp; (D) Ours
+              </center>
+            </figcaption>
+        </center>
+
+        <h3 class="title is-5">With rendered image</h3>
+        <div id="slider-wrap-4">
+            <ul id="slider">
+                <li>
+                    <img src="./static/figures/render_1.jpg">
+                </li>
+                <li>
+                    <img src="./static/figures/render_3.jpg">
+                </li>
+                <li>
+                    <img src="./static/figures/render_4.jpg">
+                </li>
+            </ul>
+
+            <div class="slider-btns-4" id="next-4"><span>▶</span></div>
+            <div class="slider-btns-4" id="previous-4"><span>◀</span></div>
+
+            <div id="slider-pagination-wrap-4">
+                <ul></ul>
+            </div>
+        </div>
+        <figcaption class="figure-caption text-justify">
+          <center>
+            (A) Source image &emsp; (B) Driving image &emsp; (C) Rendered image &emsp; (D) Ours
+          </center>
+        </figcaption>
+      </div>
+
+    </div>
+
+    <!-- Image -->
+        <!-- <hr>
+        <h3 class="title is-4">Images</h3>
+        <h3>2D AnimeCeleb</h3>
+        <div id="slider-wrap-1">
+          <ul id="slider">
+              <li>
+                  <img src="./figs/icolorit_vs_zhang_1.png">
+              </li>
+              <li>
+                  <img src="./figs/icolorit_vs_zhang_2.png">
+              </li>
+              <li>
+                  <img src="./figs/icolorit_vs_zhang_3.png">
+              </li>
+          </ul>
+
+          <div class="slider-btns-1" id="next-1"><span>▶</span></div>
+          <div class="slider-btns-1" id="previous-1"><span>◀</span></div>
+
+          <div id="slider-pagination-wrap-1">
+              <ul></ul>
+          </div>
+        </div>
+        <figcaption class="figure-caption text-justify">
+          <center>
+              (Left) User hints &emsp; (Center) Zhang et al. &emsp; (Right) iColoriT
+          </center>
+        </figcaption>
+
+        <h3>3D AnimeCeleb</h3>
+        <div id="slider-wrap-2">
+            <ul id="slider">
+                <li>
+                    <img src="./figs/diverse_color1.png">
+                </li>
+                <li>
+                    <img src="./figs/diverse_color2.png">
+                </li>
+                <li>
+                    <img src="./figs/diverse_color3.png">
+                </li>
+                <li>
+                    <img src="./figs/diverse_color4.png">
+                </li>
+            </ul>
+
+            <div class="slider-btns-2" id="next-2"><span>▶</span></div>
+            <div class="slider-btns-2" id="previous-2"><span>◀</span></div>
+
+            <div id="slider-pagination-wrap-2">
+                <ul></ul>
+            </div>
+        </div>
+
+        <h3>In the wild examples</h3>
+        <center>
+            <div id="slider-wrap-3" style="width: 70%;">
+                <ul id="slider">
+                    <li>
+                        <img src="./figs/rollout_p1.png">
+                    </li>
+                    <li>
+                        <img src="./figs/rollout_p2.png">
+                    </li>
+                </ul>
+
+                <div class="slider-btns-3" id="next-3"><span>▶</span></div>
+                <div class="slider-btns-3" id="previous-3"><span>◀</span></div>
+
+                <div id="slider-pagination-wrap-3">
+                    <ul></ul>
+                </div>
+            </div>
+        </center>
+        <hr> -->
+
+        <!-- Re-rendering. -->
+        <!-- <h3 class="title is-4">Re-rendering the input video</h3>
+        <div class="content has-text-justified">
+          <p>
+            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
+            viewpoint such as a stabilized camera by playing back the training deformations.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="75%">
+            <source src="./static/videos/replay.mp4"
+                    type="video/mp4">
+          </video>
+        </div> -->
+        <!--/ Re-rendering. -->
+
+    </div>
+  </div>
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+              tex2jax: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+          });
+      </script>
+  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  <script src="./slideshow_1.js"></script>
+  <script src="./slideshow_2.js"></script>
+  <script src="./slideshow_3.js"></script>
+  <script src="./slideshow_4.js"></script>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{kang2023expression,
+      title={Expression Domain Translation Network for Cross-domain Head Reenactment}, 
+      author={Taewoong Kang and Jeongsik Oh and Jaeseong Lee and Sunghyun Park and Jaegul Choo},
+      year={2023},
+      eprint={2310.10073},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/TalkFile_ICASSP_2024__Cross_Domain_Talk_.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/KEH0T0/AnimeTalkingHead/tree/main/EDTN" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <!-- <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p> -->
+          <p>
+            The website code is borrowed from the <a
+            href="https://github.com/nerfies/nerfies.github.io">source code</a> of Nerfies. We thank the authors for sharing the templates.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>
